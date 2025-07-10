@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog id="idCustomerMasterDialog" title="Select Customer Master" draggable="true" resizable="true">
+		<content>
+			<Toolbar>
+				<SearchField id="idCustomerSearchField" placeholder="Search..." liveChange=".onSearchCustomerMaster"/>
+			</Toolbar>
+			<List 
+			id="idCustomerMasterList" 
+			mode="MultiSelect"
+			growing="true" 
+			growingThreshold="1000" 
+			selectionChange=".onSelectionChangeCustomerMaster"
+			items="{customerMasterData>/}">
+			    
+				<StandardListItem title="{customerMasterData>Customer}" description="{customerMasterData>Name}"/>
+			</List>
+		</content>
+		<buttons>
+			<Button text="OK" press=".onConfirmCustomerMaster"/>
+			<Button text="Cancel" press=".onCloseCustomerMaster"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

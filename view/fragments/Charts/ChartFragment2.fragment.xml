@@ -1,0 +1,92 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table" xmlns:suite="sap.suite.ui.commons"
+	xmlns:viz="sap.viz.ui5.controls" xmlns:vizData="sap.viz.ui5.data" xmlns:vizFeeds="sap.viz.ui5.controls.common.feeds">
+	<suite:ChartContainer id="chartContainer" showFullScreen="true" showPersonalization="false" autoAdjustHeight="false"
+		showLegendButton="false" title="{globalData>/selectedTabText}">
+		<!-- Chart Content -->
+		<suite:content>
+			<!--<suite:ChartContainerContent icon="sap-icon://bar-chart" title="Chart View">
+				<suite:content>
+					<viz:VizFrame id="idVizFrame" vizType="column" height="400px" width="100%" uiConfig="{applicationSet:'fiori'}">
+						
+						<viz:dependents>
+							<viz:Popover id="idPopOverQuaterlyWise"></viz:Popover>
+						</viz:dependents>
+						<viz:dataset>
+							<vizData:FlattenedDataset data="{allCustlistData>/allCustlistDataQuaterlyWise}">
+								<vizData:dimensions>
+									<vizData:DimensionDefinition name="Customer Name" value="{allCustlistData>customerName}"/>
+									<vizData:DimensionDefinition name="Quarter Year" value="{allCustlistData>quaterYear}"/>
+									<vizData:DimensionDefinition name="Quarter" value="{allCustlistData>quater}"/>
+									<vizData:DimensionDefinition name="Material Group Description" value="{allCustlistData>materialGrpDesc}"/>
+								</vizData:dimensions>
+								<vizData:measures>
+									<vizData:MeasureDefinition name="Quantity" value="{allCustlistData>quantity}"/>
+									<vizData:MeasureDefinition name="Turn Over" value="{allCustlistData>turnOver}"/>
+								</vizData:measures>
+							</vizData:FlattenedDataset>
+						</viz:dataset>
+						<viz:feeds>
+							<vizFeeds:FeedItem uid="valueAxis" type="Measure" values="Quantity"/>
+							<vizFeeds:FeedItem uid="valueAxis" type="Measure" values="Turn Over"/>
+							<vizFeeds:FeedItem uid="categoryAxis" type="Dimension" values="Customer Name"/>
+							<vizFeeds:FeedItem uid="categoryAxis" type="Dimension" values="Quarter Year"/>
+							<vizFeeds:FeedItem uid="categoryAxis" type="Dimension" values="Quarter"/>
+							<vizFeeds:FeedItem uid="categoryAxis" type="Dimension" values="Material Group Description"/>
+						</viz:feeds>
+					</viz:VizFrame>
+				</suite:content>
+			</suite:ChartContainerContent>-->
+			<!-- Table Content -->
+			<suite:ChartContainerContent icon="sap-icon://table-chart" title="Table View">
+				<suite:content>
+					<table:Table id="idTable" rows="{allCustlistData>/allCustlistDataQuaterlyWise}" selectionMode="None">
+						<table:columns>
+							<table:Column>
+								<Label text="Customer Name"/>
+								<table:template>
+									<Text text="{allCustlistData>customerName}"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="Currency"/>
+								<table:template>
+									<Text text="{allCustlistData>currency}"/>
+								</table:template>
+							</table:Column>
+							<table:Column visible="{globalData>/showMaterialColumn}">
+								<Label text="Material Group Description"/>
+								<table:template>
+									<Text text="{allCustlistData>materialGrpDesc}"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="Quarter"/>
+								<table:template>
+									<Text text="{allCustlistData>quater}"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="Quarter Year"/>
+								<table:template>
+									<Text text="{allCustlistData>quaterYear}"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="Quantity"/>
+								<table:template>
+									<Text text="{allCustlistData>quantity}"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="Turn Over"/>
+								<table:template>
+									<Text text="{allCustlistData>turnOver}"/>
+								</table:template>
+							</table:Column>
+						</table:columns>
+					</table:Table>
+				</suite:content>
+			</suite:ChartContainerContent>
+		</suite:content>
+	</suite:ChartContainer>
+</core:FragmentDefinition>

@@ -1,0 +1,97 @@
+{
+    "resources": [
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": ".project.json"
+        },
+        {
+            "name": "resources.json",
+            "merged": true
+        },
+        {
+            "name": "view/fragments/Charts/ChartFragment2.fragment.xml"
+        },
+        {
+            "name": "view/fragments/Charts/ChartFragment3.fragment.xml"
+        },
+        {
+            "name": "view/fragments/Charts/ChartFragment1.fragment.xml"
+        },
+        {
+            "name": "view/fragments/Charts/ChartFragment4.fragment.xml"
+        },
+        {
+            "name": "view/fragments/Charts/ChartFragment5.fragment.xml"
+        },
+        {
+            "name": "view/fragments/Charts/ChartFragment8.fragment.xml"
+        },
+        {
+            "name": "view/fragments/Charts/ChartFragment6.fragment.xml"
+        },
+        {
+            "name": "view/fragments/Charts/ChartFragment7.fragment.xml"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "view/dialogComponent/DialogFiscalYear.fragment.xml"
+        },
+        {
+            "name": "view/dialogComponent/DialogQuarterYear.fragment.xml"
+        },
+        {
+            "name": "view/dialogComponent/DialogCustomerMaster.fragment.xml"
+        },
+        {
+            "name": "view/dialogComponent/DialogQuarter.fragment.xml"
+        },
+        {
+            "name": "view/dialogComponent/DialogMaterialMaster.fragment.xml"
+        },
+        {
+            "name": "view/Home.view.xml"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "controller/Home.controller.js"
+        },
+        {
+            "name": "controller/BaseController.js"
+        },
+        {
+            "name": "controller/App.controller.js"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": ".user.project.json"
+        },
+        {
+            "name": "libs/html2pdf.bundle.js"
+        }
+    ]
+}
