@@ -1,0 +1,235 @@
+{
+    "_version": "1.7.0",
+    "sap.app": {
+        "id": "com.infocus.salesApplication",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "sourceTemplate": {
+            "id": "servicecatalog.connectivityComponent",
+            "version": "0.0.0"
+        },
+        "dataSources": {
+            "top10CustomerService": {
+                "uri": "/sap/opu/odata/sap/Z_INF_TOP10_QTR_TRNOVR_SRV/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/metadata.xml"
+                }
+            },
+            "singleCustomerService": {
+                "uri": "/sap/opu/odata/sap/Z_INF_SINGLE_CUST_QTR_TRNOVR_SRV/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/Z_INF_SINGLE_CUST_QTR_TRNOVR_SRV/metadata.xml"
+                }
+            },
+            "allCustomerService": {
+                "uri": "/sap/opu/odata/sap/Z_INF_ALL_CUST_QTR_TRNOVR_SRV/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/Z_INF_ALL_CUST_QTR_TRNOVR_SRV/metadata.xml"
+                }
+            },
+            "quarterlyTurnoverService": {
+                "uri": "/sap/opu/odata/sap/Z_INF_QUATERLY_TURNOVER_SRV/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/Z_INF_QUATERLY_TURNOVER_SRV/metadata.xml"
+                }
+            },
+            "customerMasterService": {
+                "uri": "/sap/opu/odata/sap/ZCUST_MASTER_CDS/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/ZCUST_MASTER_CDS/metadata.xml"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_hcb",
+            "sap_belize"
+        ]
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "com.infocus.salesApplication.view.App",
+            "type": "XML"
+        },
+        "dependencies": {
+            "minUI5Version": "1.30.0",
+            "libs": {
+                "sap.collaboration": {},
+                "sap.m": {},
+                "sap.suite.ui.commons": {},
+                "sap.ui.comp": {},
+                "sap.ui.core": {},
+                "sap.ui.layout": {},
+                "sap.ushell": {},
+                "sap.uxap": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "com.infocus.salesApplication.i18n.i18n"
+                }
+            },
+            "top10CustomerModel": {
+                "dataSource": "top10CustomerService",
+                "preload": true,
+                "settings": {
+                    "useBatch": false
+                }
+            },
+            "singleCustomerModel": {
+                "dataSource": "singleCustomerService",
+                "preload": true,
+                "settings": {
+                    "useBatch": false
+                }
+            },
+            "allCustomerModel": {
+                "dataSource": "allCustomerService",
+                "preload": true,
+                "settings": {
+                    "useBatch": false
+                }
+            },
+            "quarterlyTurnoverModel": {
+                "dataSource": "quarterlyTurnoverService",
+                "preload": true,
+                "settings": {
+                    "useBatch": false
+                }
+            },
+            "customerMasterModel": {
+                "dataSource": "customerMasterService",
+                "preload": true,
+                "settings": {
+                    "useBatch": false
+                }
+            },
+            "authData": {
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "globalData": {
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "allCustlistData": {
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "top10listData": {
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "singleCustlistData": {
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "quarterlyTurnoverlistData": {
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "customerMasterData": {
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "top10CustChartData": {
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "newAllCustomerOutstanding": {
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "newTop5Outstanding": {
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "newSingleCustomerOutstanding": {
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "newTotalOutstanding": {
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "newSingleCustomerOutstandingQtrFY": {
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "new_Total_Outstanding_QtrFY": {
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "companyCode": {
+                "type": "sap.ui.model.json.JSONModel"
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ],
+            "js": []
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "com.infocus.salesApplication.view",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "clearAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "home",
+                    "pattern": "",
+                    "target": "home"
+                },
+                {
+                    "name": "chart",
+                    "pattern": "chart",
+                    "target": "chart"
+                }
+            ],
+            "targets": {
+                "home": {
+                    "viewName": "Home",
+                    "viewLevel": 1
+                },
+                "chart": {
+                    "viewName": "Chart",
+                    "viewLevel": 2
+                }
+            }
+        }
+    },
+    "sap.platform.abap": {
+        "uri": "/sap/bc/ui5_ui5/sap/zsalesoverview",
+        "_version": "1.1.0"
+    }
+}

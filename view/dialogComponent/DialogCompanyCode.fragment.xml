@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog id="idCompanyCodeDialog" title="Select Company Code" draggable="true" resizable="true">
+		<content>
+			<Toolbar>
+				<SearchField id="idCompanyCodeSearchField" placeholder="Search..." liveChange=".onSearchCompanyCode"/>
+			</Toolbar>
+			<List 
+			id="idCompanyCodeList" 
+			mode="SingleSelectLeft"
+			growing="true" 
+			growingThreshold="1000" 
+			selectionChange=".onSelectionChangeCompanyCode"
+			items="{companyCode>/}">
+			    
+				<StandardListItem title="{companyCode>bukrs}" description="{companyCode>butxt}"/>
+			</List>
+		</content>
+		<buttons>
+			<Button text="OK" press=".onConfirmCompanyCode"/>
+			<Button text="Cancel" press=".onCloseCompanyCode"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

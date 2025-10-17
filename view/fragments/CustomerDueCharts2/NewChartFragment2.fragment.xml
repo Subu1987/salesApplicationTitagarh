@@ -1,0 +1,62 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table" xmlns:suite="sap.suite.ui.commons"
+	xmlns:viz="sap.viz.ui5.controls" xmlns:vizData="sap.viz.ui5.data" xmlns:vizFeeds="sap.viz.ui5.controls.common.feeds">
+	<suite:ChartContainer id="chartContainer" showFullScreen="true" showPersonalization="false" autoAdjustHeight="false"
+		title="{globalData>/selectedTabText2}" showLegendButton="false">
+		<!-- Chart Content -->
+		<suite:content>
+			<suite:ChartContainerContent icon="sap-icon://bar-chart" title="Chart View">
+				<suite:content>
+					<viz:VizFrame id="idVizFrame2" vizType="column" height="400px" width="100%" uiConfig="{applicationSet:'fiori'}">
+					     <!--Define dependents for Popover -->
+						<viz:dependents>
+							<viz:Popover id="idPopOverOutstanding"></viz:Popover>
+						</viz:dependents>
+						<viz:dataset>
+							<vizData:FlattenedDataset data="{newTop5Outstanding>/}">
+								<vizData:dimensions>
+									<!--<vizData:DimensionDefinition name="Customer Name" value="{newTop5Outstanding>name1}"/>-->
+									<vizData:DimensionDefinition name="Customer Name" value="{newTop5Outstanding>customerKey}" displayValue="{newTop5Outstanding>name1}"/>
+								</vizData:dimensions>
+								<vizData:measures>
+									<vizData:MeasureDefinition name="Outstanding Amount (₹ Cr)" value="{newTop5Outstanding>amount}"/>
+								</vizData:measures>
+							</vizData:FlattenedDataset>
+						</viz:dataset>
+						<viz:feeds>
+							<vizFeeds:FeedItem uid="valueAxis" type="Measure" values="Outstanding Amount (₹ Cr)"/>
+							<vizFeeds:FeedItem uid="categoryAxis" type="Dimension" values="Customer Name"/>
+							<!--<vizFeeds:FeedItem uid="categoryAxis" type="Dimension" values="Fiscal Year"/>-->
+						</viz:feeds>
+					</viz:VizFrame>
+				</suite:content>
+			</suite:ChartContainerContent>
+			<!-- Table Content -->
+			<suite:ChartContainerContent icon="sap-icon://table-chart" title="Table View">
+				<suite:content>
+					<table:Table id="idTable" rows="{newTop5Outstanding>/}" selectionMode="None">
+						<table:columns>
+							<table:Column>
+								<Label text="Customer Name"/>
+								<table:template>
+									<Text text="{newTop5Outstanding>name1}"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<Label text="Amonut (₹ Cr)"/>
+								<table:template>
+									<Text text="{newTop5Outstanding>amount}"/>
+								</table:template>
+							</table:Column>
+							<!--<table:Column>-->
+							<!--	<Label text="Turn Over (₹ Cr)"/>-->
+							<!--	<table:template>-->
+							<!--		<Text text="{allCustlistData>turnOver}"/>-->
+							<!--	</table:template>-->
+							<!--</table:Column>-->
+						</table:columns>
+					</table:Table>
+				</suite:content>
+			</suite:ChartContainerContent>
+		</suite:content>
+	</suite:ChartContainer>
+</core:FragmentDefinition>

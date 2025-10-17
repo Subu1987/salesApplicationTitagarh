@@ -1,0 +1,76 @@
+<core:FragmentDefinition 
+xmlns:suite="sap.suite.ui.commons" 
+xmlns:m="sap.m"
+xmlns:core="sap.ui.core" 
+xmlns:table="sap.ui.table"
+xmlns:viz="sap.viz.ui5.controls" 
+xmlns:vizData="sap.viz.ui5.data" 
+xmlns:vizFeeds="sap.viz.ui5.controls.common.feeds">
+	<suite:ChartContainer id="chartContainer" showFullScreen="true" showPersonalization="false" autoAdjustHeight="false" showLegendButton="false"
+		title="{globalData>/selectedTabText}">
+		<!-- Chart Content -->
+		<!--<suite:dimensionSelectors>
+			<m:Select id="chartTypeSelect" change="onChartTypeChange" width="200px">
+				<core:Item key="column" text="📊 Column Chart"/>
+				<core:Item key="bar" text="📉 Bar Chart"/>
+				<core:Item key="line" text="📈 Line Chart"/>
+
+			</m:Select>
+		</suite:dimensionSelectors>-->
+		<suite:content>
+			<suite:ChartContainerContent icon="sap-icon://bar-chart" title="Chart View">
+				<suite:content>
+					<viz:VizFrame id="idVizFrame" vizType="column" height="400px" width="100%" uiConfig="{applicationSet:'fiori'}">
+					    <!-- Define dependents for Popover -->
+						<viz:dependents>
+							<viz:Popover id="idPopOverFiscalYearWise"></viz:Popover>
+						</viz:dependents>
+						<viz:dataset>
+							<vizData:FlattenedDataset data="{top10listData>/top10CustlistDataFiscalYearWise}">
+								<vizData:dimensions>
+									<vizData:DimensionDefinition name="Customer Name" value="{top10listData>customerName}"/>
+									<vizData:DimensionDefinition name="Fiscal Year" value="{top10listData>fiscalYear}"/>
+								</vizData:dimensions>
+								<vizData:measures>
+									<vizData:MeasureDefinition name="Turn Over (₹ Cr)" value="{top10listData>turnOver}"/>
+								</vizData:measures>
+							</vizData:FlattenedDataset>
+						</viz:dataset>
+						<viz:feeds>
+							<vizFeeds:FeedItem uid="valueAxis" type="Measure" values="Turn Over (₹ Cr)"/>
+							<vizFeeds:FeedItem uid="categoryAxis" type="Dimension" values="Customer Name"/>
+							<vizFeeds:FeedItem uid="categoryAxis" type="Dimension" values="Fiscal Year"/>
+						</viz:feeds>
+					</viz:VizFrame>
+				</suite:content>
+			</suite:ChartContainerContent>
+			<!-- Table Content -->
+			<suite:ChartContainerContent icon="sap-icon://table-chart" title="Table View">
+				<suite:content>
+					<table:Table id="idTable" rows="{top10listData>/top10CustlistDataFiscalYearWise}" selectionMode="None">
+						<table:columns>
+							<table:Column>
+								<m:Label text="Customer Name"/>
+								<table:template>
+									<m:Text text="{top10listData>customerName}"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<m:Label text="Fiscal Year"/>
+								<table:template>
+									<m:Text text="{top10listData>fiscalYear}"/>
+								</table:template>
+							</table:Column>
+							<table:Column>
+								<m:Label text="Turn Over (₹ Cr)"/>
+								<table:template>
+									<m:Text text="{top10listData>turnOver}"/>
+								</table:template>
+							</table:Column>
+						</table:columns>
+					</table:Table>
+				</suite:content>
+			</suite:ChartContainerContent>
+		</suite:content>
+	</suite:ChartContainer>
+</core:FragmentDefinition>

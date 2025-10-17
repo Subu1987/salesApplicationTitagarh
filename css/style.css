@@ -1,0 +1,312 @@
+/* Enter your custom styles here */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Allow text to wrap inside IconTabFilter */
+.sapMIconTabFilter .sapMText {
+    white-space: normal; /* Allow wrapping */
+    word-wrap: break-word; /* Break words if necessary */
+    overflow-wrap: break-word; /* Prevent text overflow */
+}
+.customTitleCenter {
+	width: 100%;
+	text-align: center;
+	display: block;
+	color: #004593; /* Optional: apply color */
+	font-weight: bold;
+}
+
+
+/* For most browsers */
+.boldText input::placeholder {
+    font-weight: bold !important;
+    color: #000 !important;
+}
+
+/* For Safari */
+.boldText input::-webkit-input-placeholder {
+    font-weight: bold !important;
+    color: #000 !important;
+}
+
+/* Targets the outermost wrapper including value help icon */
+.roundedInput .sapMInputBaseContentWrapper {
+  border-radius: 6px !important;
+  border: 1px solid #ccc !important; /* Optional: visible border */
+  overflow: hidden; /* Ensures the rounding is respected */
+}
+
+/* Optional: for cleaner appearance */
+.roundedInput .sapMInputBaseInner {
+  border: none !important;
+}
+
+/* Optional: style on focus */
+.roundedInput .sapMInputFocused .sapMInputBaseContentWrapper {
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+
+
+/* Optional: make input text bold */
+.boldText .sapMInputBaseInner {
+  font-weight: bold;
+}
+
+
+/* Style for bold, beautiful radio button text */
+.styledRadioGroup .sapMRbBLabel {
+	font-weight: bold;
+	font-size: 0.9rem;
+	color: #2c3e50; /* You can choose any theme-friendly color */
+}
+
+/* Optional: Add spacing and hover effect for better feel */
+.styledRadioGroup .sapMRb {
+	margin: 8px;
+	transition: all 0.2s ease-in-out;
+}
+
+.styledRadioGroup .sapMRb:hover .sapMRbBLabel {
+	color: #0070f2;
+}
+.styledRadioGroup .sapMRbSel .sapMRbBOut {
+	border-color: #0070f2;
+	background-color: #0070f2;
+}
+
+/* make sure your IconTabBar has class="beautifulTabBar" in XML */
+ 
+.beautifulTabBar .sapMIconTabBar .sapMITBText,
+.beautifulTabBar .sapMITBHead .sapMITBText,
+.beautifulTabBar .sapMIconTabBar .sapMText,
+.beautifulTabBar .sapMIconTabHeader .sapMText,
+.beautifulTabBar .sapMITBTab .sapMITBText,
+.beautifulTabBar .sapMIconTabBarHead,
+.beautifulTabBar .sapMITBHorizontalWrapper {
+ 
+    white-space: normal !important;    /* allow wrapping */
+    overflow: visible !important;      /* show overflow */
+    text-overflow: clip !important;    /* remove ellipsis */
+    width: auto !important;
+    max-width: none !important;
+    display: inline-block !important;
+ 
+}
+/* ensure the header wrapper doesn't hide the labels */
+ 
+.beautifulTabBar .sapMIconTabBarHead,
+.beautifulTabBar .sapMITBHorizontalWrapper {
+ 
+    overflow: visible !important;
+    white-space: normal !important;
+ 
+}
+/* Make IconTabBar tabs use full horizontal space */
+ 
+.beautifulTabBar .sapMITBHead {
+ 
+    display: flex !important;
+    justify-content: space-around !important;
+    align-items: center !important;/* or space-between */
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+ 
+}
+/* Each tab gets flexible width */
+ 
+.beautifulTabBar .sapMITBTab {
+ 
+    flex: 1 1 auto !important;
+    text-align: center !important;
+ 
+}
+/* Optional: center text & icon nicely */
+ 
+.beautifulTabBar .sapMITBTab .sapMITBText {
+ 
+    text-align: center !important;
+ 
+}
+ 
+.beautifulTabBar .sapMITBHead {
+ 
+    display: flex !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    align-items: center !important;
+ 
+}
+ 
+/* === Layout fix: Use full width while keeping left alignment logic === */
+/* Make header a flex container using full space */
+ 
+.beautifulTabBar .sapMITBHead {
+ 
+    display: flex !important;
+    justify-content: flex-start !important; /* spread across full width */
+    align-items: center !important;
+    width: 100% !important;
+    flex-wrap: nowrap !important;
+ 
+}
+/* Distribute tabs evenly when multiple exist */
+ 
+.beautifulTabBar .sapMITBTab:not(:only-child) {
+ 
+    flex: 1 1 auto !important;    /* stretch evenly */
+    text-align: center !important;
+ 
+}
+/* Special case: single tab — stays left but fills header visually */
+ 
+.beautifulTabBar .sapMITBTab:only-child {
+ 
+    flex: 0 1 auto !important;
+    text-align: left !important;
+    margin-left: 1rem !important;  /* small left padding */
+ 
+}
+/* Optional – ensure the entire header background fills */
+ 
+.beautifulTabBar .sapMIconTabBarHead {
+ 
+    width: 100% !important;
+ 
+}
+/* Ensure icon and text look balanced */
+ 
+.beautifulTabBar .sapMITBText,
+.beautifulTabBar .sapMText {
+ 
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+ 
+}
+ 
+/* === Font size & emphasis for tab text === */
+.beautifulTabBar .sapMITBText,
+.beautifulTabBar .sapMText,
+.beautifulTabBar .sapMITBTab .sapMITBText {
+    font-size: 1rem !important;  /* adjust as you like: 1.1rem, 1.2rem, etc. */
+    font-weight: 600 !important;    /* make it stand out a bit */
+    line-height: 1.3 !important;
+    color: #222 !important;         /* slightly darker than default */
+}
+
+
+.smallIcon .sapMBtnIcon {
+    font-size: 1.1rem !important;
+    /* Adjust the font-size as per your preference */
+}
+
+.round {
+    border-radius: 50px !important;
+}
+
+.sapMInputBaseInner {
+    border-radius: 10px;
+}
+
+.boldText {
+    font-weight: bold !important;
+}
+
+#dynamicTable {
+    border-right: 1.2px solid #34618747 !important;
+}
+
+#chartPanel {
+    border-left: 1.2px solid #34618747 !important;
+}
+
+.highlightedRow {
+    background-color: #e5e5ff !important;
+}
+
+.chartButton {
+    font-size: 1.5rem !important;
+}
+
+.incomingCircle {
+    width: 15px;
+    height: 15px;
+    background-color: #00e600;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.outgoingCircle {
+    width: 15px;
+    height: 15px;
+    background-color: #0000b3;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.balanceText {
+    margin-left: 5px;
+}
+
+.pdfTable {
+    width: auto;
+    /* Allow table to expand horizontally */
+    border-collapse: collapse;
+    margin: 0;
+    /* Remove any margin */
+    padding: 0;
+    /* Remove any padding */
+    white-space: nowrap;
+    /* Prevent line breaks within table cells */
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
+}
+
+.pdfTable td {
+    border: 1px solid #4c4cff;
+    padding: 8px;
+    text-align: left;
+}
+
+.pdfTable th {
+    background-color: #4d4dff;
+    font-weight: bold !important;
+}
+
+.sapMListTblRow {
+    margin: 0;
+    /* Remove any margin */
+    padding: 0;
+    /* Remove any padding */
+}
+.pdfTable td {
+    border: 1px solid #c0c4cc;
+    padding: 8px;
+    text-align: left;
+}
+ 
+.pdfTable th {
+    background-color: #91c8f6;
+    font-weight: bold;
+}
+.sapMBtnInner{
+
+	border: none !important;
+
+}
+ 
+.highlightedRow {
+
+    background-color: #5fb2f7 !important;
+
+}
+ 
+.boldText {
+
+    font-weight: bold !important;
+
+}
