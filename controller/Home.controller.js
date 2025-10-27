@@ -1066,14 +1066,26 @@ sap.ui.define([
 
 		// 	return filters;
 		// },
+		
+		// Helper function to get first part of fiscal year
+		_getFiscalYearStart: function(sYearRange) {
+			if (typeof sYearRange !== "string") return sYearRange;
+			return sYearRange.split("-")[0].trim();
+		},
 		_buildFilters: function(oGlobalData, oSelectedIndex) {
 			var filters = [];
 
-			var aFiscalYears = oGlobalData.fiscalYears || [];
+			// var aFiscalYears = oGlobalData.fiscalYears || [];
+			// Use helper function to preprocess fiscal years
+			var aFiscalYears = (oGlobalData.fiscalYears || []).map(this._getFiscalYearStart, this);
+			
 			var aCompanyCode = oGlobalData.selectedCompanyCodeId || [];
 			var aSelectedCustomerMasterData = oGlobalData.selectedCustomerIDs || [];
 			var aQuarters = oGlobalData.selectedQuarters || [];
-			var aQuarterYears = oGlobalData.selectedQuarterYears || [];
+			
+			// var aQuarterYears = oGlobalData.selectedQuarterYears || [];
+			var aQuarterYears = (oGlobalData.selectedQuarterYears || []).map(this._getFiscalYearStart, this);
+			
 			var oSelectedTabText = oGlobalData.selectedTabText;
 
 			var subFilters = []; // This will hold ANDed filter groups
@@ -2156,7 +2168,8 @@ sap.ui.define([
 			var aFiscalYears = oGlobalData.fiscalYears || [];
 			var aSelectedCustomerMasterData = oGlobalData.selectedCustomerIDs || [];
 			var aQuarters = oGlobalData.selectedQuarters || [];
-			var aQuarterYears = oGlobalData.selectedQuarterYears || [];
+			// var aQuarterYears = oGlobalData.selectedQuarterYears || [];
+			var aQuarterYears = (oGlobalData.selectedQuarterYears || []).map(this._getFiscalYearStart, this);
 			var aCompanyCode = oGlobalData.selectedCompanyCodeId || [];
 
 			if (oSelectedIndex === 3) { // For Customer Due QTR/FY
